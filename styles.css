@@ -221,6 +221,8 @@ input[type="submit"]{
     font-weight: bolder;
     font-size: 2rem;
     position: absolute;
+    display: grid;
+    place-content: center;
     top: 10%;
     right: 2%;
 }
