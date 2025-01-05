@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+:root{
+    /* ##TEXT */
+    --PALE-VIOLET: hsl(276, 100%, 81%);
+    /* (sub-heading at the top of the app UI) */
+    --MODERATE-VIOLET:  hsl(276, 55%, 52%);
+    /* (chat on the left) */
+    --DESATURATED-DARK-VIOLET: hsl(271, 15%, 43%);
+    /* (chat on the right) */
+    --VERY-DARK-DESATURATED-VIOLET: hsl(271, 36%, 24%);
+    /* (main heading) */
+    --GRAYISH-BLUE:  hsl(206, 6%, 79%);
+    /* (placeholder text) */
+    --DARK-GRAYSIH-VIOLET:  hsl(270, 7%, 64%);
+    /* (paragraph) */
+
+    /* ##GRADIENTS */
+    --LIGHT-MAGENTA: hsl(293, 100%, 63%);
+    --LIGHT-VIOLET: hsl(264, 100%, 61%);
+
+    /* ##SECONDARY */
+    --WHITE: hsl(0, 0%, 100%);
+    --LIGHT-GRAYISH-VIOLET: hsl(270, 20%, 96%);
+    /* (app background) */
+    --VERY-DARK-DESATURATED-VIOLET: hsl(271, 36%, 24%);
+    /* (submit button background) */
+    --VERY-LIGHT-MAGENTA:  hsl(289, 100%, 72%);
+    /* (radio button outline) */
+}
+body{
+    font-family: "Rubik", serif;
+}
+main{
+    padding: 2rem 0;
+}
+.chat{
+    border: 1rem solid var(--WHITE);
+    border-radius: 2.6rem 2.6rem 3.2rem 3.1rem;
+    width: 90%;
+    margin: auto;
+    background-color: var(--LIGHT-GRAYISH-VIOLET);
+}
+.profile{
+    height: 12rem;
+    position: relative;
+    background-image: linear-gradient(to right, var(--LIGHT-VIOLET), var(--LIGHT-MAGENTA));
+    gap: 2rem;
+    border-radius: 2rem 2rem 0.8rem 0.8rem;
+    margin-bottom: 1.4rem;
+}
+.more{
+    position: absolute;
+    top: 47%;
+    left: 6%;
+    transform: scale(1,2) scale(0.8);
+    font-size: 0.5rem;
+    color: var(--WHITE);
+}
+.return{
+    position: absolute;
+    top: 52%;
+    right: 10%;
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.return p{
+    height: 0.6rem;
+    width: 0.6rem;
+    background-color: var(--WHITE);
+    border-radius: 50%;
+}
+.profile::after{
+    content: "";
+    width: 18rem;
+    height: 4rem;
+    background-color: var(--WHITE);
+    position: absolute;
+    top: -1%;
+    right: 50%;
+    transform: translate(50%,0%);
+    border-radius: 0rem 0rem 3rem 3rem;
+}
+.profile img{
+    height: 4.1rem;
+    width: 4.1rem;
+    border: 0.2rem solid var(--WHITE);
+    border-radius: 50%;
+    margin-left: 3rem;
+    position: absolute;
+    top: 50%;
+}
+.status{
+    width: max-content;
+    position: absolute;
+    top: 48%;
+    left: 24%;
+}
+.status h3{
+    font-size: 1.8rem;
+    color: var(--WHITE);
+}
+.status p{
+    font-size: 1.2rem;
+    color: var(--PALE-VIOLET);
+}
+.messages{
+    padding: 0 1rem 1.2rem 1rem;
+}
+.left{
+    font-size: 1.3rem;
+    color: var(--MODERATE-VIOLET);
+    background-color: hsla(276, 100%, 81%, 0.200);
+    max-width: 65%;
+    text-align: left;
+    height: 6rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: 2.4rem 2rem 2rem 1rem;
+}
+.maxima{
+    font-size: 1.3rem;
+    color: var(--MODERATE-VIOLET);
+    background-color: hsla(276, 100%, 81%, 0.200);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: 2rem;
+    height: 7rem;
+    width: 24rem;
+}
+.box{
+    width: 17.8rem;
+    height: 5rem;
+    gap: 1.2rem;
+    display: flex;
+    margin-bottom: 1.2rem;
+    float: right;
+}
+.box img{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1rem;
+}
+.right{
+    color: black;
+    background-color: var(--WHITE);
+    height: 5rem;
+    width: 18rem;
+    font-size: 1.3rem;
+    border-radius: 2rem 2.4rem 1rem 2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 2rem;
+    max-width: 60%;
+    float: right;
+}
+form{
+    margin-top: 1.2rem;
+}
+.price{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-image: linear-gradient(to left, var(--LIGHT-VIOLET), var(--LIGHT-MAGENTA));
+    font-size: 2rem;
+    height: 6rem;
+    width: 24rem;
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
+    border-radius: 2.4rem 2rem 2rem 1rem;
+    position: relative;
+    color: var(--WHITE);
+}
+input[type="radio"]{
+    appearance: none;
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 50%;
+    border: 0.2rem solid var(--VERY-LIGHT-MAGENTA);
+}
+span{
+    font-weight: bold;
+    font-size: 2.3rem;
+    position: absolute;
+    right: 10%;
+    top: 30%;
+}
+.submit{
+    display: flex;
+    align-items: center;
+    background-color: var(--WHITE);
+    color: var(--GRAYISH-BLUE);
+    height: 5rem;
+    padding: 1rem;
+    border-radius: 3rem;
+    position: relative;
+    margin: 1.4rem 0 0.4rem 0;
+}
+.submit input{
+    height: 4rem;
+    border: none;
+    font-size: 1.4rem;
+}
+input[type="submit"]{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-color: var(--VERY-DARK-DESATURATED-VIOLET);
+    color: var(--WHITE);
+    font-weight: bolder;
+    font-size: 2rem;
+    position: absolute;
+    top: 10%;
+    right: 2%;
+}
+.about{
+    margin: 5.5rem auto;
+    text-align: center;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: 0.0.8em;
+}
+.about p{
+    color: var(--DARK-GRAYSIH-VIOLET);
+    font-size: 1.6rem;
+    width: 28rem;
+    margin: auto;
+}
+body{
+    position: relative;
+}
+article{
+    margin: 4rem 0 0 0;
+}
+.gradient{
+    position: absolute;
+    top: 0%;
+    left: -70%;
+    height: 60rem;
+    background-image: linear-gradient(to top, var(--LIGHT-VIOLET), var(--LIGHT-MAGENTA));
+    width: 50rem;
+    border-radius: 0 0 50% 50%;
+    z-index: -2;
+}
+@media (min-width:600px) {
+    .chat{
+        max-width: 40rem;
+    }
+    .gradient{
+        position: absolute;
+        top: 0%;
+        left: -20%;
+    }
+}
+@media (min-width: 1024px) {
+    article{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .chat{
+        margin: 5rem 0;
+    }
+    .about{
+        text-align: left;
+        margin: 5rem 0;
+    }
+    .about p{
+        width: 40rem;
+    }
+    .gradient{
+        height: 80rem;
+        width: 80rem;
+        left: 10%;
+        transform: translateX(-60%);
+    }
+}
