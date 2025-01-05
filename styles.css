@@ -35,6 +35,7 @@
 }
 body{
     font-family: "Rubik", serif;
+    background-color: var(--LIGHT-GRAYISH-VIOLET);
 }
 main{
     padding: 2rem 0;
@@ -53,6 +54,9 @@ main{
     gap: 2rem;
     border-radius: 2rem 2rem 0.8rem 0.8rem;
     margin-bottom: 1.4rem;
+}
+.gradient-2{
+    display: none;
 }
 .more{
     position: absolute;
@@ -267,6 +271,9 @@ article{
         top: 0%;
         left: -20%;
     }
+    .gradient-2{
+        display: none;
+    }
 }
 @media (min-width: 1024px) {
     article{
@@ -285,9 +292,25 @@ article{
         width: 40rem;
     }
     .gradient{
-        height: 80rem;
+        height: 70rem;
         width: 80rem;
         left: 10%;
         transform: translateX(-60%);
+        background-image: linear-gradient(to top, var(--LIGHT-VIOLET), var(--LIGHT-VIOLET), var(--LIGHT-VIOLET), var(--LIGHT-MAGENTA));
+    }
+    body{
+        position: relative;
+    }
+    .gradient-2{
+        display: block;
+        height: 70rem;
+        width: 80rem;
+        border-radius: 50% 50% 0 0;
+        z-index: -2;
+        background-color:  hsla(276, 100%, 81%, 0.200);
+        left: 50%;
+        bottom: 0%;
+        position: absolute;
+        transform: translateX(60%);
     }
 }
