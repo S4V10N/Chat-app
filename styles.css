@@ -35,20 +35,27 @@
 }
 body{
     font-family: "Rubik", serif;
+    overflow: hidden;
     background-color: var(--LIGHT-GRAYISH-VIOLET);
 }
 main{
     padding: 2rem 0;
 }
 .chat{
-    border: 1rem solid var(--WHITE);
+    border: 1.5rem solid var(--WHITE);
     border-radius: 2.6rem 2.6rem 3.2rem 3.1rem;
     width: 90%;
+    max-width: 38rem;
+    box-shadow: 1rem 1rem 14rem var(--DARK-GRAYSIH-VIOLET);
     margin: auto;
     background-color: var(--LIGHT-GRAYISH-VIOLET);
 }
 .profile{
-    height: 12rem;
+    height: 11rem;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 2.5rem 2rem 2.5rem;
+    justify-content: space-between;
     position: relative;
     background-image: linear-gradient(to right, var(--LIGHT-VIOLET), var(--LIGHT-MAGENTA));
     gap: 2rem;
@@ -58,61 +65,85 @@ main{
 .gradient-2{
     display: none;
 }
+.stroke-one,
+.stroke-two {
+    width: 0.4rem;
+    height: 1rem;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 0.2rem;
+}
+.stroke-one {
+    transform: rotate(30deg) translateY(0.3rem);
+}
+.stroke-two {
+    transform: rotate(-30deg) translateY(-0.3rem);
+}
+.angle-one {
+    transform: rotate(45deg) translateY(0.4rem);
+}
+.angle-two {
+    transform: rotate(-45deg) translateY(-0.4rem);
+}
+.l-one,
+.l-two {
+    height: 1.5rem;
+}
 .more{
-    position: absolute;
-    top: 47%;
-    left: 6%;
-    transform: scale(1,2) scale(0.8);
     font-size: 0.5rem;
+    width: max-content;
     color: var(--WHITE);
 }
 .return{
-    position: absolute;
-    top: 52%;
-    right: 10%;
     height: 2.5rem;
     display: flex;
+    width: max-content;
     flex-direction: column;
     gap: 0.2rem;
 }
 .return p{
-    height: 0.6rem;
-    width: 0.6rem;
+    height: 0.4rem;
+    width: 0.4rem;
     background-color: var(--WHITE);
     border-radius: 50%;
 }
 .profile::after{
     content: "";
     width: 18rem;
-    height: 4rem;
+    height: 3rem;
     background-color: var(--WHITE);
     position: absolute;
     top: -1%;
     right: 50%;
     transform: translate(50%,0%);
-    border-radius: 0rem 0rem 3rem 3rem;
+    border-radius: 0rem 0rem 2rem 2rem;
 }
 .profile img{
-    height: 4.1rem;
+    border-radius: 50%;
     width: 4.1rem;
     border: 0.2rem solid var(--WHITE);
-    border-radius: 50%;
-    margin-left: 3rem;
-    position: absolute;
-    top: 50%;
+}
+.p-one {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.nav {
+    gap: 1.5rem;
+    width: max-content;
+    display: flex;
+    align-items: center;
 }
 .status{
     width: max-content;
-    position: absolute;
-    top: 48%;
-    left: 24%;
+    justify-self: flex-start;
 }
 .status h3{
     font-size: 1.8rem;
     color: var(--WHITE);
 }
 .status p{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--PALE-VIOLET);
 }
 .messages{
@@ -216,7 +247,16 @@ span{
     border: none;
     font-size: 1.4rem;
 }
-input[type="submit"]{
+.submit input:focus {
+    border: none;
+    outline: none;
+}
+.center {
+    width: fit-content;
+    transform: scaleX(-1);
+    margin-left: -0.4rem;
+}
+.send{
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -232,19 +272,21 @@ input[type="submit"]{
 }
 .about{
     margin: 5.5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 h1{
-    font-size: 3rem;
+    font-size: 4.5rem;
     font-weight: 500;
     margin-bottom: 2rem;
-    letter-spacing: 0.0.8em;
 }
 .about p{
     color: var(--DARK-GRAYSIH-VIOLET);
-    font-size: 1.6rem;
-    width: 28rem;
-    margin: auto;
+    font-size: 1.8rem;
+    width: 34rem;
+    line-height: 1.5em;
 }
 body{
     position: relative;
@@ -257,15 +299,12 @@ article{
     top: 0%;
     left: -70%;
     height: 60rem;
-    background-image: linear-gradient(to top, var(--LIGHT-VIOLET), var(--LIGHT-MAGENTA));
+    background-image: linear-gradient( 45deg, var(--LIGHT-VIOLET), var(--LIGHT-MAGENTA));
     width: 50rem;
     border-radius: 0 0 50% 50%;
     z-index: -2;
 }
 @media (min-width:600px) {
-    .chat{
-        max-width: 40rem;
-    }
     .gradient{
         position: absolute;
         top: 0%;
@@ -275,35 +314,34 @@ article{
         display: none;
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
     article{
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        gap: 20rem;
+        justify-content: center;
     }
     .chat{
         margin: 5rem 0;
     }
     .about{
         text-align: left;
-        margin: 5rem 0;
+        margin: 0;
+        align-items: flex-start;
     }
     .about p{
-        width: 40rem;
+        width: 50rem;
     }
     .gradient{
-        height: 70rem;
+        height: 90%;
         width: 80rem;
         left: 10%;
-        transform: translateX(-60%);
+        transform: translateX(-60%) translateY(-10rem);
         background-image: linear-gradient(to top, var(--LIGHT-VIOLET), var(--LIGHT-VIOLET), var(--LIGHT-VIOLET), var(--LIGHT-MAGENTA));
-    }
-    body{
-        position: relative;
     }
     .gradient-2{
         display: block;
-        height: 70rem;
+        height: 90%;
         width: 80rem;
         border-radius: 50% 50% 0 0;
         z-index: -2;
@@ -311,6 +349,6 @@ article{
         left: 50%;
         bottom: 0%;
         position: absolute;
-        transform: translateX(60%);
+        transform: translateX(60%) translateY(10rem);
     }
 }
