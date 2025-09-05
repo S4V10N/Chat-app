@@ -35,7 +35,6 @@
 }
 body{
     font-family: "Rubik", serif;
-    overflow: hidden;
     background-color: var(--LIGHT-GRAYISH-VIOLET);
 }
 main{
@@ -315,6 +314,9 @@ article{
     }
 }
 @media (min-width: 1440px) {
+    body {
+        overflow: hidden;
+    }
     article{
         display: flex;
         align-items: center;
